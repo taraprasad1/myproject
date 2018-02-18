@@ -1,0 +1,43 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" 
+   xmlns:aop = "http://www.springframework.org/schema/aop"
+   xmlns:p="http://www.springframework.org/schema/p"
+   xmlns:context="http://www.springframework.org/schema/context"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+   http://www.springframework.org/schema/aop 
+   http://www.springframework.org/schema/aop/spring-aop-3.0.xsd 
+   http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+ 
+ <context:component-scan base-package="com.rest" />
+ <context:annotation-config />
+ <aop:aspectj-autoproxy />
+ <bean id="dataSource" name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+ <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+ <property name="url" value="jdbc:mysql://localhost:3306/testone"></property>
+ <property name="username" value="root"></property>
+ <property name="password" value="root"></property>
+ </bean>
+ <bean id="sessionFactory" name="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+ <property name="dataSource" ref="dataSource"></property>
+ <property name="packagesToScan">
+ <list>
+ <value>com.rest.models.UserDetails</value>
+ </list>
+ </property>
+ <property name="hibernateProperties">
+ <props>
+ <prop key="hibernate.show_sql">true</prop>
+ <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+ <prop key="hibernate.hbm2ddl.auto">create</prop>
+ </props>
+ </property>
+ </bean>
+ <bean id="dao" name="dao" class="com.rest.dao.DaoImpl" ></bean>
+ <bean id="business" name="business" class="com.rest.business.BusinessImpl" ></bean>
+ <bean name="aspect" class="com.rest.aspect.MyAspect" ></bean>
+ <bean name="poi" class="com.rest.poi.ApachePoi" ></bean>
+ </beans>
