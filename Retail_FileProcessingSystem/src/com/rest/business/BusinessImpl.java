@@ -9,10 +9,7 @@ import com.rest.dao.Dao;
 
 @Service("business")
 public class BusinessImpl implements Business{
-public BusinessImpl(String name)
-{
-System.out.println(name);	
-}
+
 	@Autowired
 	@Qualifier("dao")
 	private Dao dao;

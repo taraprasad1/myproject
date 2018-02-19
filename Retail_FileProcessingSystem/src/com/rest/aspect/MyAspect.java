@@ -7,7 +7,7 @@ import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 
 import com.rest.business.Business;
-//@Component("aspect")
+@Component("aspect")
 @Aspect
 public class MyAspect {
 

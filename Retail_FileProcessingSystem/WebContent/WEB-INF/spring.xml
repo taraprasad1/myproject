@@ -39,15 +39,9 @@
  </props>
  </property>
  </bean>
- <bean id="dao" class="com.rest.dao.DaoImpl">
- </bean>
- <bean id="business" name="business" class="com.rest.business.BusinessImpl" >
- <constructor-arg>
-<value>tara</value>
-</constructor-arg>
- </bean>
- <bean name="aspect" class="com.rest.aspect.MyAspect" >
- </bean>
+ <bean id="dao" class="com.rest.dao.DaoImpl" />
+ <bean id="business" name="business" class="com.rest.business.BusinessImpl" />
+ <bean name="aspect" class="com.rest.aspect.MyAspect" />
  <bean name="poi" class="com.rest.poi.ApachePoi" ></bean>
   
  </beans>

@@ -36,8 +36,8 @@
  </props>
  </property>
  </bean>
- <bean id="dao" name="dao" class="com.rest.dao.DaoImpl" ></bean>
+ <!-- <bean id="dao" name="dao" class="com.rest.dao.DaoImpl" ></bean>
  <bean id="business" name="business" class="com.rest.business.BusinessImpl" ></bean>
  <bean name="aspect" class="com.rest.aspect.MyAspect" ></bean>
- <bean name="poi" class="com.rest.poi.ApachePoi" ></bean>
+ <bean name="poi" class="com.rest.poi.ApachePoi" ></bean> -->
  </beans>
