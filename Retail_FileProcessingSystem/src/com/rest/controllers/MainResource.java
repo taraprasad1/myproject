@@ -54,18 +54,15 @@ public void setPoi(ApachePoi poi) {
 @Produces(MediaType.APPLICATION_JSON)
 public Message upload(@FormDataParam("file")InputStream fileupload,
 		@FormDataParam("file")FormDataContentDisposition fileDetails) throws IOException
-{int i=0;
-if(i==0)
 {
-throw new SimpleException("exception Occers")	;
-}
 	String workingDirectory=System.getProperty("user.dir");
 	String locationUpload=workingDirectory+System.getProperty("file.separator")+fileDetails.getFileName();
+	//System.out.println("before upload");
 	writeToFile(fileupload,locationUpload);
 	//poi.readfile(locationUpload);
 	//ApachePoi ap=new ApachePoi();
 	//List list=ap.readfile(locationUpload);
-	//System.out.println("ok");
+	System.out.println("ok");
 	
 	List list=poi.readfile(locationUpload);
 	System.out.println(list.get(2));
