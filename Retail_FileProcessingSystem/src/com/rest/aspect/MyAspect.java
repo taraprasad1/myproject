@@ -10,9 +10,15 @@ import com.rest.business.Business;
 @Component("aspect")
 @Aspect
 public class MyAspect {
-
+ 
 	@Before("execution(* get*())")
 	public void beforeAspect()
+	{
+		System.out.println("before execution method");
+		
+	}
+	@Before("execution(* get*())")
+	public void aeforeAspect()
 	{
 		System.out.println("before execution method");
 		
