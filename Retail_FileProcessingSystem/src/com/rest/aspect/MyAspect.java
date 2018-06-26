@@ -10,7 +10,7 @@ import com.rest.business.Business;
 @Component("aspect")
 @Aspect
 public class MyAspect {
- 
+ //tara
 	@Before("execution(* get*())")
 	public void beforeAspect()
 	{
