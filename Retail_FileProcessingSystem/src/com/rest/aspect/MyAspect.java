@@ -17,7 +17,7 @@ public class MyAspect {
 		System.out.println("before execution method");
 		
 	}
-	@Before("execution(* get*())")
+	/*@Before("execution(* get*())")
 	public void aeforeAspect()
 	{
 		System.out.println("before execution method");
@@ -28,5 +28,5 @@ public class MyAspect {
 	{
 		System.out.println("before execution method");
 		
-	}
+	}*/
 }
